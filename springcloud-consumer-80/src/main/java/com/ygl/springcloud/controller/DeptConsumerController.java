@@ -50,7 +50,7 @@ public class DeptConsumerController {
     }
     @RequestMapping("/services")
     public Object services() {
-        List<ServiceInstance> instances = client.getInstances(REST_URL_PREFIX);
+        List<ServiceInstance> instances = client.getInstances("SPRINGCLOUD-PROVIDER-DEPT");
         for (ServiceInstance s: instances) {
             System.out.println(s.getHost()+"\t"+
                     s.getPort()+"\t"+
