@@ -63,9 +63,13 @@ public class DeptConsumerController {
     @RequestMapping("/consumer/dept/queryAll")
     public List<Dept> queryAll(){
         List<ServiceInstance> instances = client.getInstances("SPRINGCLOUD-PROVIDER-DEPT");
-        ServiceInstance instance = instances.get(0);
-        String host = instance.getHost();
-        int port = instance.getPort();
+        String host = null;
+        int port = 0;
+        if (instances != null){
+            ServiceInstance instance = instances.get(0);
+             host = instance.getHost();
+             port = instance.getPort();
+        }
         System.out.println("测试地址："+"http://"+host+":"+port+"/dept/queryAll");
         String s = REST_URL_PREFIX+"/dept/queryAll";
         System.out.println("进来了！");
