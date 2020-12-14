@@ -3,11 +3,9 @@ package com.ygl.springcloud.controller;
 import com.ygl.springcloud.pojo.Dept;
 import com.ygl.springcloud.service.DeptClientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -31,7 +29,7 @@ public class DeptConsumerController {
     }
 
     @RequestMapping("/consumer/dept/queryById")
-    public Dept queryById(Integer id){
+    public Dept queryById(@RequestParam("id") Integer id){
         return this.service.queryById(id);
     }
     @RequestMapping("/consumer/dept/queryAll")

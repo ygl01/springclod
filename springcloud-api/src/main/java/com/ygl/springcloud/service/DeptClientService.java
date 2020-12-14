@@ -5,6 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -17,7 +18,7 @@ import java.util.List;
 @FeignClient(value = "SPRINGCLOUD-PROVIDER-DEPT")
 public interface DeptClientService {
     @GetMapping("/dept/queryById")
-    public Dept queryById(Integer id);
+    public Dept queryById(@RequestParam("id") Integer id);
     @GetMapping("/dept/queryAll")
     public List<Dept> queryAll();
     @PostMapping("/dept/addDept")
