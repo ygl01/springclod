@@ -1,0 +1,9 @@
+#系统级别配置
+spring:
+  cloud:
+    config:
+      # server端连接云端 ； client连接server端
+      uri: http://localhost:3344
+      name: config-client # 需要从git上读取的资源名称，不要带后缀
+      profile: test
+      label: master
