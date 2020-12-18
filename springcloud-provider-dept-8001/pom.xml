@@ -29,8 +29,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-
-
         <!-- 拿到实体类，我们需要配置api module -->
         <dependency>
             <groupId>org.example</groupId>

@@ -16,6 +16,7 @@ import java.util.List;
  */
 @Component
 @FeignClient(value = "SPRINGCLOUD-PROVIDER-DEPT" , fallbackFactory=DeptClientServiceFallbackFactory.class)
+//@FeignClient(value = "SPRINGCLOUD-PROVIDER-DEPT")  //此注解是开启feign;value是feign组件访问服务名称
 public interface DeptClientService {
     @GetMapping("/dept/queryById")
     public Dept queryById(@RequestParam("id") Integer id);

@@ -30,6 +30,7 @@ public class DeptConsumerController {
 
     @RequestMapping("/consumer/dept/queryById")
     public Dept queryById(@RequestParam("id") Integer id){
+        System.out.println("哈哈.");
         return this.service.queryById(id);
     }
     @RequestMapping("/consumer/dept/queryAll")

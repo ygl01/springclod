@@ -13,8 +13,6 @@
 
     <dependencies>
 
-
-
         <!-- ribbon依赖，别导错了包，是springCloud -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

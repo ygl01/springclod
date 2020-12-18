@@ -20,7 +20,7 @@ info:
 zuul:
   routes:
     mydept.serviceId: springcloud-provider-dept  #将原来的服务名称换成我们自己的服务名称
-    mydept.path: /mydept/** #这里是我们更改后的服务名称
+    mydept.path: /mydept/** #这里是我们更改后的访问路径
   ignored-services: springcloud-provider-dept #忽略掉这个服务名称，不能再使用这个路径去访问了
   # ignored-services: “*” #这个是隐藏全部的服务名称
   prefix: /ygl #这个是统一访问前缀  设置公共前缀

@@ -29,6 +29,7 @@ public class DeptController {
     //出现hystrix时返回调用的方法
     @HystrixCommand(fallbackMethod = "queryHystrixById")
     public Dept queryById(Integer id){
+        System.out.println("我来了");
         Dept dept = deptService.queryById(id);
         System.out.println("查询的值为："+dept);
         if (dept == null){
